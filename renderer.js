@@ -75,7 +75,7 @@ class Renderer extends Ytcr.Player {
             //obj.ytcr = Ytcr.instance(obj, options);
             obj.ytcr.start();
 
-            obj.ytcr.setDebug(true);
+            //obj.ytcr.setDebug(true);
             obj.ytcr.on('connected', client => {
                 console.log(`Connected to ${client.name}`);
                 console.log(`${client}`);
