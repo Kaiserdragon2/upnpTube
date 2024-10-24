@@ -71,7 +71,8 @@ class Renderer extends Ytcr.Player {
                              friendlyName: obj.friendlyName,
                              manufacturer: description.manufacturer,
                              modelName: description.modelName}; 
-            obj.ytcr = Ytcr.instance(obj, options);
+            obj.ytcr = new Ytcr(obj, options)
+            //obj.ytcr = Ytcr.instance(obj, options);
             obj.ytcr.start();
 
             obj.ytcr.setDebug(true);
