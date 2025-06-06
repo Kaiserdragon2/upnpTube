@@ -77,6 +77,11 @@ class Renderer extends Ytcr.Player {
                             manufacturer: description.manufacturer,
                             modelName: description.modelName }, 
                             app: { screenName: obj.friendlyName, brand: description.manufacturer, model: description.modelName }, // App details
+                            device: { 
+                                name: obj.friendlyName, // Name of the device
+                                brand: description.manufacturer, // Brand of the device
+                                model: description.modelName, // Model of the device
+                            },
                             logger:  undefined, // Our own logger implementation (if UI enabled)
                             logLevel: 'debug' // Ouput debug messages 
                             
