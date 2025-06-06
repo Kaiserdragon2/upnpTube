@@ -76,7 +76,7 @@ class Renderer extends Ytcr.Player {
                             friendlyName: obj.friendlyName,
                             manufacturer: description.manufacturer,
                             modelName: description.modelName }, 
-                            app: { resetPlayerOnDisconnectPolicy: RESET_PLAYER_ON_DISCONNECT_POLICIES.ALL_EXPLICITLY_DISCONNECTED },
+                            app: { screenName: obj.friendlyName, brand: description.manufacturer, model: description.modelName }, // App details
                             logger:  undefined, // Our own logger implementation (if UI enabled)
                             logLevel: 'debug' // Ouput debug messages 
                             
