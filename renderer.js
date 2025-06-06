@@ -67,10 +67,20 @@ class Renderer extends Ytcr.Player {
             // });
 
             // Create a youtube cast receiver
-            const options = {port: YTCR_BASE_PORT + obj.index,
-                             friendlyName: obj.friendlyName,
-                             manufacturer: description.manufacturer,
-                             modelName: description.modelName}; 
+            //const options = {port: YTCR_BASE_PORT + obj.index,
+              //               friendlyName: obj.friendlyName,
+                //             manufacturer: description.manufacturer,
+                  //           modelName: description.modelName}; 
+
+            const options = {dial: { port: YTCR_BASE_PORT + obj.index, // DIAL server port
+                            friendlyName: obj.friendlyName,
+                            manufacturer: description.manufacturer,
+                            modelName: description.modelName }, 
+                            app: { resetPlayerOnDisconnectPolicy: RESET_PLAYER_ON_DISCONNECT_POLICIES.ALL_EXPLICITLY_DISCONNECTED },
+                            logger:  undefined, // Our own logger implementation (if UI enabled)
+                            logLevel: 'debug' // Ouput debug messages 
+                            
+                        }
             obj.ytcr = new Ytcr(obj, options)
             //obj.ytcr = Ytcr.instance(obj, options);
             obj.ytcr.start();
