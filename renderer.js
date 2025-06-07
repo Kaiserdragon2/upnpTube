@@ -131,13 +131,31 @@ class Renderer extends Ytcr.Player {
                      console.log(stderr);
                  }
 
+                exec(`youtube-dl -f bestaudio[ext=m4a] --get-url https://www.youtube.com/watch?v=${videoId}`, function(err, stdout, stderr) {
+                    if(err) {
+                        console.log(`[${obj.friendlyName}]: Error getting URL from youtube-dl:`);
+                        // Enable to see what went wrong
+                        // console.log(err);
+                        // if(stdout) {
+                        //     console.log(stdout);
+                        // }
+                        // if(stderr) {
+                        //     console.log(stderr);
+                        // }
+                    } else {
+                        // Call the callback with the retrieved URL
+                        const audioUrl = stdout.toString().trim();
+                        console.log(`[${obj.friendlyName}]: Media URL: ${audioUrl}`);
+                        callback(audioUrl);
+                    }
+                });
             }
-
+            else {
                 // Call the callback with the retrieved URL
                 const audioUrl = stdout.toString().trim();
                 console.log(`[${obj.friendlyName}]: Media URL: ${audioUrl}`);
                 callback(audioUrl);
-            
+            }
         });
     }
 
