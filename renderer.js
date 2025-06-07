@@ -163,10 +163,10 @@ class Renderer extends Ytcr.Player {
      * The methods implementing yt-cast-receiver.Player
      */
     async play(videoId, position = 0) {
-        console.log(`[${this.friendlyName}]: Play ${videoId} at position ${position}s`);
+        console.log(`[${this.friendlyName}]: Play ${videoId.id} at position ${position}s`);
         const obj = this;
 
-        this.getAudioUrl(videoId, function(audioUrl) {
+        this.getAudioUrl(videoId.id, function(audioUrl) {
             const url = new URL(audioUrl);
 
             // Stop the existing proxy (if there is one)
