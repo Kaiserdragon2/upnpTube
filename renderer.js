@@ -129,7 +129,7 @@ class Renderer extends Ytcr.Player {
                  }
                  if(stderr) {
                      console.log(stderr);
-                // }
+                 }
 
                 exec(`youtube-dl -f bestaudio[ext=m4a] --get-url https://www.youtube.com/watch?v=${videoId}`, function(err, stdout, stderr) {
                     if(err) {
