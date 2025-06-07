@@ -123,12 +123,12 @@ class Renderer extends Ytcr.Player {
                 console.log(`[${obj.friendlyName}]: Unable to get audio URL using yt-dlp. Using youtube-dl but this is slower!`);
 
                 // Enable to see what went wrong
-                // console.log(err);
-                // if(stdout) {
-                //     console.log(stdout);
-                // }
-                // if(stderr) {
-                //     console.log(stderr);
+                 console.log(err);
+                 if(stdout) {
+                     console.log(stdout);
+                 }
+                 if(stderr) {
+                     console.log(stderr);
                 // }
 
                 exec(`youtube-dl -f bestaudio[ext=m4a] --get-url https://www.youtube.com/watch?v=${videoId}`, function(err, stdout, stderr) {
