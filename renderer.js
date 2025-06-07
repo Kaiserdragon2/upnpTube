@@ -200,7 +200,7 @@ class Renderer extends Ytcr.Player {
                     console.log(err);
                 }
                 else {
-                    obj.notifyPlayed();
+                    obj.play();
                 }
             });
         });
@@ -219,7 +219,7 @@ class Renderer extends Ytcr.Player {
                 console.log(`[${obj.friendlyName}]: Paused`);
 
                 // Notify YouTube that we have paused
-                obj.notifyPaused();
+                obj.pause();
             }
         });
     }
@@ -237,7 +237,7 @@ class Renderer extends Ytcr.Player {
                 console.log(`[${obj.friendlyName}]: Resumed`);
 
                 // Notify YouTube that we have resumed
-                obj.notifyResumed();
+                obj.resume();
             }
         });
     }
@@ -255,7 +255,7 @@ class Renderer extends Ytcr.Player {
                 console.log(`[${obj.friendlyName}]: Stopped`);
 
                 // Notify YouTube that we have stopped
-                obj.notifyStopped();
+                obj.stop();
             }
         });
     }
